@@ -1,15 +1,1 @@
-{% extends 'blog/base.html' %}
 
-{% block content %}
-    <h2>All Blog Posts</h2>
-    {% for post in posts %}
-        <div class="card mt-3">
-            <div class="card-body">
-                <h5>{{ post.title }}</h5>
-                <p>{{ post.content }}</p>
-                <small>By {{ post.author.username }} on {{ post.created_at }}</small>
-                <a href="{% url 'post_detail' post.id %}" class="btn btn-primary btn-sm">View</a>
-            </div>
-        </div>
-    {% endfor %}
-{% endblock %}
